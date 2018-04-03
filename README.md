@@ -1,2 +1,0 @@
-# notex
-gestion note
