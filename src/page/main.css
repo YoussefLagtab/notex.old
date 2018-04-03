@@ -1,0 +1,16 @@
+.none {
+    display: none;
+}
+table {
+    width: 1300px;
+}
+table tr td {
+    padding: 5px 10px;
+}
+input {
+    width: 100%;
+}
+#continue {
+    display: none;
+    float: right;
+}

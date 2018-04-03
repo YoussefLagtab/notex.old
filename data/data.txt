@@ -1,0 +1,144 @@
+etudiants = [
+  {
+    nApp: "64-548-8657",
+    nom: "ELLAR",
+    prenom: "MARCO"
+  },
+  {
+    nApp: "12-846-6741",
+    nom: "NOEL",
+    prenom: "KYLE"
+  },
+  {
+    nApp: "94-357-8645",
+    nom: "COLLINWOOD",
+    prenom: "IMOGEN"
+  },
+  {
+    nApp: "91-232-7066",
+    nom: "ANDRYUNIN",
+    prenom: "WALLIE"
+  },
+  {
+    nApp: "28-185-6138",
+    nom: "PANTLING",
+    prenom: "ARDENIA"
+  },
+  {
+    nApp: "33-591-6243",
+    nom: "COCKRAM",
+    prenom: "KATHERINE"
+  },
+  {
+    nApp: "90-864-0556",
+    nom: "BEECHENO",
+    prenom: "ELSWORTH"
+  },
+  {
+    nApp: "95-309-1122",
+    nom: "ROLFS",
+    prenom: "YOKO"
+  },
+  {
+    nApp: "20-550-7401",
+    nom: "MATTIASSI",
+    prenom: "KESSIAH"
+  },
+  {
+    nApp: "30-495-8132",
+    nom: "LANGMUIR",
+    prenom: "MONROE"
+  },
+  {
+    nApp: "27-908-4200",
+    nom: "HAYNE",
+    prenom: "PALMER"
+  },
+  {
+    nApp: "61-572-1577",
+    nom: "CARNELLEY",
+    prenom: "VIVIA"
+  },
+  {
+    nApp: "09-213-1524",
+    nom: "CAUSTON",
+    prenom: "PEARCE"
+  },
+  {
+    nApp: "98-863-3082",
+    nom: "PAXFORDE",
+    prenom: "ISADOR"
+  },
+  {
+    nApp: "03-050-0540",
+    nom: "ARMIGER",
+    prenom: "DOUGY"
+  },
+  {
+    nApp: "38-691-8589",
+    nom: "BIDDULPH",
+    prenom: "ROSEMARIE"
+  },
+  {
+    nApp: "15-058-4428",
+    nom: "DIMITRESCO",
+    prenom: "SERENA"
+  },
+  {
+    nApp: "23-891-6288",
+    nom: "SUMMERSON",
+    prenom: "ALISA"
+  },
+  {
+    nApp: "48-116-4925",
+    nom: "TAYLOE",
+    prenom: "RONA"
+  },
+  {
+    nApp: "65-818-9301",
+    nom: "HOWATT",
+    prenom: "OTHELIA"
+  },
+  {
+    nApp: "38-255-8093",
+    nom: "KEARSLEY",
+    prenom: "DICK"
+  },
+  {
+    nApp: "47-971-1328",
+    nom: "KLIMUS",
+    prenom: "RISA"
+  },
+  {
+    nApp: "09-311-3989",
+    nom: "LASSETER",
+    prenom: "DYNA"
+  },
+  {
+    nApp: "59-293-4942",
+    nom: "GALTONE",
+    prenom: "ODELIA"
+  },
+  {
+    nApp: "71-694-4551",
+    nom: "JENKING",
+    prenom: "CAMELLA"
+  },
+  {
+    nApp: "47-842-4244",
+    nom: "BEDDALL",
+    prenom: "WAYLIN"
+  },
+  {
+    nApp: "87-917-5946",
+    nom: "RYDER",
+    prenom: "MARTYN"
+  },
+  {
+    nApp: "20-134-2228",
+    nom: "FACKRELL",
+    prenom: "FILIP"
+  }
+];
+
+modules = ["BD", "COO", "COMP", "POO", "RES", "RO"];
