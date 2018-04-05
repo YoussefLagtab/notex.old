@@ -1,3 +1,4 @@
+const _ = require("underscore");
 module.exports = {
   createTable: (etud = [], modul = [], t = "") => {
     let ml = modul.length;
@@ -16,24 +17,31 @@ module.exports = {
     thead.appendChild(tha);
     thead.appendChild(thb);
     thead.appendChild(thc);
-    for (let m of modul) {
+    for (let m in modul) {
       let th = document.createElement("th");
-      th.appendChild(document.createTextNode(m));
+      th.appendChild(document.createTextNode(modul[m]));
       thead.appendChild(th);
     }
     table.appendChild(thead);
     for (let e of etud) {
-      // let i = i | 0;
-      let tr, td, text;
-      tr = document.createElement("tr");
-      for (let key in e) {
+      let tr = document.createElement("tr"),
+        td,
+        key = "nApp";
+      _.times(3, () => {
         td = document.createElement("td");
         td.appendChild(document.createTextNode(e[key]));
         tr.appendChild(td);
-        // if (t !== "input") {
-
-        // }
+        if (key === "nApp") key = "nom";
+        else key = "prenom";
+      });
+      if (esse.eNotes) {
+        e.eNotes.forEach(n => {
+          td = document.createElement("td");
+          td.appendChild(document.createTextNode(n));
+          tr.appendChild(td);
+        });
       }
+
       if (t === "input")
         for (let i = 0; i < ml; i++) {
           let td = document.createElement("td");
@@ -44,9 +52,6 @@ module.exports = {
           td.appendChild(inp);
           tr.appendChild(td);
         }
-      else {
-        for (let i = 0; i < ml; i++) {}
-      }
       table.appendChild(tr);
     }
     return table;
@@ -70,10 +75,10 @@ module.exports = {
       moy;
 
     Etudiant.forEach(et => {
-      let notes = et[3];
+      let notes = et.eNotes;
       nElim = notes.some(e => e < 5);
       moy = notes.reduce((a, c) => a + c, 0) / notes.length;
-      et[2] = moy;
+      et["moy"] = moy;
       if (nElim || moy < 10) eNonVal.push(et);
       else eVal.push(et);
     });

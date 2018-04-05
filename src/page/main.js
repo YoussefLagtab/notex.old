@@ -58,8 +58,8 @@ db
       // let modules = [];
       for (let m in _modules) modules.push(_modules[m]);
       let tab = createTable(_data, modules, "input");
-      div.appendChild(tab);
-      document.getElementById("etud").appendChild(div);
+      div.append(tab);
+      document.getElementById("etud").prepend(div);
       document.getElementById("continue").style.display = "block";
     });
   });
@@ -93,34 +93,37 @@ document.getElementById("continue").addEventListener("click", e => {
 
       // Etudiant.push({ nApp });
     }
-    Etudiant.push([nApp, nom, prenom, eNotes]);
-    console.log(Etudiant);
+    Etudiant.push({ nApp, nom, prenom, eNotes });
   }
   if (!valide) return false;
+
+  console.log("======================== Etudiant ========================");
+  Etudiant.forEach(et => {
+    console.log(et);
+  });
+  console.log("=============================================================");
 
   // console.log("valdie!!");
   // console.log(...Etudiant);
 
   let { eVal, eNonVal } = valider(Etudiant);
-  // console.log(eVal);
-  // console.log("======================");
-  // console.log("======================");
-  // console.log(eNonVal);
+  console.log("======================== Valider ========================");
+  eVal.forEach(et => {
+    console.log(et);
+  });
+  console.log("=============================================================");
+  console.log("======================== Non Valider ========================");
+  eNonVal.forEach(et => {
+    console.log(et);
+  });
+  console.log("=============================================================");
 
-  /* afficher */
-  console.log(eVal);
-  console.log(eNonVal);
+  document.getElementById("etudVal").append(createTable(eVal, modules));
+  document.getElementById("etudNonVal").append(createTable(eNonVal, modules));
 
-  eVal = [].concat(...eVal);
-  // eVal.unshift(eVal.pop());
-  eNonVal = [].concat(...eNonVal);
-  // eNonVal.unshift(eNonVal.pop());
-
-  document.getElementById("etudVal").appendChild(createTable(eVal, modules));
-
-  document
-    .getElementById("etudNonVal")
-    .appendChild(createTable(eNonVal, modules));
+  // document
+  //   .getElementById("etudNonVal")
+  //   .appendChild(createTable(eNonVal, modules));
   // document.getElementById("etudNonVal");
   /* ======================== */
   // Etudiant.forEach(et => {
