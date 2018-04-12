@@ -16,7 +16,8 @@ function createWindow() {
       slashes: true
     })
   );
-  win.webContents.openDevTools();
+  // win.webContents.openDevTools();
+  win.maximize();
   win.on("closed", () => {
     win = null;
   });
@@ -32,5 +33,3 @@ global.sharedObj = {
   filliere: null,
   semestre: null
 };
-
-

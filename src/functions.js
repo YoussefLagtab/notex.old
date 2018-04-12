@@ -34,7 +34,7 @@ module.exports = {
         if (key === "nApp") key = "nom";
         else key = "prenom";
       });
-      if (esse.eNotes) {
+      if (e.eNotes) {
         e.eNotes.forEach(n => {
           td = document.createElement("td");
           td.appendChild(document.createTextNode(n));

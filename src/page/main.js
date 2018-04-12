@@ -28,9 +28,10 @@ let modules = [];
   document.body.getElementsByTagName("button")[0].style.display = "block";
 }); */
 
-const fil = remote.getGlobal("sharedObj").filliere,
-  sem = remote.getGlobal("sharedObj").semestre,
-  div = document.createElement("div");
+let { filliere, semestre } = remote.getGlobal("sharedObj");
+const fil = filliere,
+  sem = semestre;
+let div = document.createElement("div");
 document.getElementById("filsem").innerHTML = fil + " " + sem + ":";
 /* data =  */
 
@@ -126,28 +127,28 @@ document.getElementById("continue").addEventListener("click", e => {
   //   .appendChild(createTable(eNonVal, modules));
   // document.getElementById("etudNonVal");
   /* ======================== */
-  // Etudiant.forEach(et => {
-  //   let { nApp, eNotes, moy } = et;
-  //   let resultat = getResult(moy);
-  //   index = sem[1] - 1;
-  //   let r = "notes." + index + ".semestre.ord.resultat";
-  //   let n = "notes." + index + ".semestre.ord.note";
-  //   db.collection("etudiant").update(
-  //     { nApp },
-  //     {
-  //       $set: { r: resultat, n: moy }
-  //     }
-  //   );
-  //   eNotes.forEach((_note, i) => {
-  //     let r = "notes." + index + ".modules.i.ord.resultat";
-  //     let n = "notes." + index + ".modules.i.ord.note";
-  //     let resultat = getResult(n);
-  //     db.collection("etudiant").update(
-  //       { nApp },
-  //       {
-  //         $set: { r: resultat, n: _note }
-  //       }
-  //     );
-  //   });
-  // });
+  Etudiant.forEach(et => {
+    let { nApp, eNotes, moy } = et;
+    let resultat = getResult(moy);
+    index = sem[1] - 1;
+    let r = "notes." + index + ".semestre.ord.resultat";
+    let n = "notes." + index + ".semestre.ord.note";
+    db.collection("etudiant").update(
+      { nApp },
+      {
+        $set: { r: resultat, n: moy }
+      }
+    );
+    eNotes.forEach((_note, i) => {
+      let r = "notes." + index + ".modules." + i + ".ord.resultat";
+      let n = "notes." + index + ".modules." + i + ".ord.note";
+      let resultat = getResult(_note);
+      db.collection("etudiant").update(
+        { nApp },
+        {
+          $set: { r: resultat, n: _note }
+        }
+      );
+    });
+  });
 });
